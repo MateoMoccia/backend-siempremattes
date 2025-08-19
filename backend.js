@@ -7,20 +7,21 @@ import {MercadoPagoConfig, Preference} from "mercadopago";
 
 dotenv.config();
 const app = express();
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //---------------------------------------------------------------------------------------------------------------
 
 
 const allowedOrigins = [
-  "https://tienda-siempremattes.vercel.app", // tu frontend en Vercel
-  "http://localhost:5173" // por si probás local
+  "https://tienda-siempremattes.vercel.app",
+  "http://localhost:5173"
 ];
 
 app.use(cors({
   origin: (origin, cb) => {
-    if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+    console.log("Request origin:", origin); // <-- agrega esto para debug
+    if (!origin) return cb(null, true); // permite herramientas como Postman
+    if (allowedOrigins.some(o => origin.startsWith(o))) return cb(null, true);
     return cb(new Error("Not allowed by CORS"));
   },
   credentials: true
