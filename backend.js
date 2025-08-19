@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
   "https://tienda-siempremattes.vercel.app",
-  "http://localhost:5173"
+  "http://localhost:5173",
+    "http://localhost:4000"
+
 ];
 
 app.use(cors({
