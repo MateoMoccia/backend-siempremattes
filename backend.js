@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const allowedOrigins = [
   "https://tienda-siempremattes.vercel.app",
+    "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app",
   "http://localhost:5173",
     "http://localhost:4000"
 
