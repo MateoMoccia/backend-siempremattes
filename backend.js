@@ -79,7 +79,7 @@ Tu Tienda de Mates
     console.log("Correo enviado con éxito");
     return true;
   } catch (error) {
-    console.error("Error al enviar el correo:", error);
+    console.error("Error completo al enviar el correo:", error); // <--- CAMBIO
     return false;
   }
 };
