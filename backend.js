@@ -124,6 +124,7 @@ app.post("/crear-preferencia", async (req, res) => {
 });
 //---------------------------------------------------------------------------------------------------------------
 
+app.get("/ping", (_, res) => res.send("pong"));
 
 
 const PORT = process.env.PORT || 8080;
